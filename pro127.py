@@ -1,4 +1,4 @@
-from bs4 import BeautifulSoup as bs
+from bs4 import BeautifulSoup
 import requests
 import pandas as pd
 
@@ -8,7 +8,7 @@ bright_stars_url = 'https://en.wikipedia.org/wiki/List_of_brightest_stars_and_ot
 page = requests.get(bright_stars_url)
 print(page)
 
-soup = bs(page.text,'html.parser')
+soup = BeautifulSoup(page.text,'html.parser')
 
 star_table = soup.find('table')
 
